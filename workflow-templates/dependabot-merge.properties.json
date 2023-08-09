@@ -1,0 +1,11 @@
+{
+    "name": "dependabot-merge",
+    "description": "Auto merge dependabot pull requests with gh cli",
+    "iconName": "octicon git-merge",
+    "categories": [
+        "continuous-integration"
+    ],
+    "filePatterns": [
+        ".*\\.md$"
+    ]
+}
