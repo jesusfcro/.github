@@ -1,5 +1,5 @@
 {
-    "name": "Auto merge workflow",
+    "name": "auto-merge",
     "description": "Auto merge dependabot pull requests",
     "iconName": "octicon git-merge",
     "categories": [
