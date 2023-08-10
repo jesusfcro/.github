@@ -1,0 +1,22 @@
+name: Auto tag
+on:
+  schedule:             # Group PRs in the same tag
+    - cron:  '30 5,17 * * 1,2'  # Try some times to allow deps to propagate.
+  workflow_dispatch:    # Manual in case needed
+jobs:
+  auto-tag:
+    # Validate that workflow_dispatch was on the default_branch.
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write   # Needed to elevate secret.GITHUB_TOKEN permissions.
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'  # Requires the full history to calculate the tag
+    - name: Bump version and push
+      uses: anothrNick/github-tag-action@1.64.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DEFAULT_BUMP: patch
+        WITH_V: true

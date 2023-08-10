@@ -1,0 +1,9 @@
+
+{
+    "name": "auto-tag",
+    "description": "Auto tag",
+    "iconName": "octicon tag",
+    "categories": [
+        "continuous-integration"
+    ]
+}

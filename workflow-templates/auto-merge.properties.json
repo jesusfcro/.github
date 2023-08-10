@@ -4,8 +4,5 @@
     "iconName": "octicon git-merge",
     "categories": [
         "continuous-integration"
-    ],
-    "filePatterns": [
-        ".*\\.md$"
     ]
 }

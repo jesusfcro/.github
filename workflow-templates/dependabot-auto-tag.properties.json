@@ -1,0 +1,8 @@
+{
+    "name": "dependabot-auto-tag",
+    "description": "Auto tag dependabot PRs",
+    "iconName": "octicon tag",
+    "categories": [
+        "continuous-integration"
+    ]
+}
