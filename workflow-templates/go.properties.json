@@ -1,0 +1,8 @@
+
+{
+    "name": "Go build",
+    "description": "Build example",
+    "categories": [
+        "continuous-integration"
+    ]
+}
