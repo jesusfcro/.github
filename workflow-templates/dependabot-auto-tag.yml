@@ -38,14 +38,7 @@ jobs:
           echo "last=$LAST_TAG"
           echo "next=$NEXT"
         } >> "$GITHUB_OUTPUT"
-    - name: Create tag
-      uses: actions/github-script@v6
+    - name: Create tag and release
       if: ${{steps.history.outputs.authors=='dependabot[bot]' && steps.history.outputs.next!=''}}
-      with:
-        script: |
-          github.rest.git.createRef({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            ref: `refs/tags/${{ steps.history.outputs.next }}`,
-            sha: context.sha
-          })
+      run: |
+        gh release create "${{steps.history.outputs.next}}" --generate-notes
